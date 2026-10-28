@@ -68,7 +68,8 @@ machine and accounts.
 
 ## Incomplete steps
 
-- Registry digest: pending the authenticated Docker Hub push.
+- Registry digest: pending; Docker Hub currently returns `insufficient_scope` until the
+  `akkichauhan15` account is logged in and its public `fest-backend` repository exists.
 - Screenshots: must be captured unedited with the personalized REGNO terminal prompt.
 - Cosign public key and signature evidence: pending local password-protected key generation.
 
