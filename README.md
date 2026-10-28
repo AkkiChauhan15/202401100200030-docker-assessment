@@ -9,7 +9,7 @@
 | PORT | `8030` |
 | Docker Hub username | `akkichauhan15` |
 | Docker Hub repository | `https://hub.docker.com/r/akkichauhan15/fest-backend` |
-| `1.0.0` digest | `REPLACE_AFTER_PUSH` |
+| `1.0.0` digest | `sha256:31b1122212aac732271bdab0893baae5b61517dea080d0ecc7d095a51553f054` |
 
 ## Architecture
 
@@ -58,6 +58,8 @@ CRITICAL findings in `0.2` have no available fix; the required command with
 - Trivy `0.76.1` scanned both images and the required fixed-critical gate passed.
 - Cosign `3.1.4` is installed locally for Stage 5.
 - The fixed container runs as UID/GID `10001:10001`.
+- Docker Hub tags `1.0.0` and `1.0` resolve to the recorded digest.
+- Compose successfully pulled `1.0.0` from Docker Hub after its local tags were removed.
 - The health endpoint returned `database: true` through nginx.
 - `ping -c 1 db` from the frontend failed with `bad address`, proving network isolation.
 - Two local test registrations survived a Compose teardown and restart.
@@ -71,8 +73,6 @@ machine and accounts.
 
 ## Incomplete steps
 
-- Registry digest: pending; Docker Hub currently returns `insufficient_scope` until the
-  `akkichauhan15` account is logged in and its public `fest-backend` repository exists.
 - Screenshots: must be captured unedited with the personalized REGNO terminal prompt.
 - Cosign public key and signature evidence: pending local password-protected key generation.
 
