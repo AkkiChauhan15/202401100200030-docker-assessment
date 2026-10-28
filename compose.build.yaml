@@ -1,0 +1,8 @@
+# Stage 2 override: build the backend locally before the registry image exists.
+services:
+  backend:
+    image: fest-backend:0.2
+    build:
+      context: ./backend
+      args:
+        APP_VERSION: "0.2"
