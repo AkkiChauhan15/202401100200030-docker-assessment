@@ -56,13 +56,21 @@ CRITICAL findings in `0.2` have no available fix; the required command with
 ## Local verification
 
 - Trivy `0.76.1` scanned both images and the required fixed-critical gate passed.
-- Cosign `3.1.4` is installed locally for Stage 5.
+- Cosign `3.1.4` verified the signed `1.0.0` digest with `cosign.pub`.
+- Unsigned `1.0.1` was rejected with `no signatures found` and exit code `10`.
 - The fixed container runs as UID/GID `10001:10001`.
 - Docker Hub tags `1.0.0` and `1.0` resolve to the recorded digest.
 - Compose successfully pulled `1.0.0` from Docker Hub after its local tags were removed.
 - The health endpoint returned `database: true` through nginx.
 - `ping -c 1 db` from the frontend failed with `bad address`, proving network isolation.
 - Two local test registrations survived a Compose teardown and restart.
+
+## Signature verification
+
+| Release | Digest | Verification |
+| --- | --- | --- |
+| `1.0.0` | `sha256:31b1122212aac732271bdab0893baae5b61517dea080d0ecc7d095a51553f054` | Signed; verified with `cosign.pub` |
+| `1.0.1` | `sha256:7796abbcae598d7669ffd747eed09d93b72f0dc54af092e3ead373641d350b95` | Unsigned; correctly rejected |
 
 ## AI declaration
 
@@ -74,7 +82,6 @@ machine and accounts.
 ## Incomplete steps
 
 - Screenshots: must be captured unedited with the personalized REGNO terminal prompt.
-- Cosign public key and signature evidence: pending local password-protected key generation.
 
 ## Evidence command checklist
 
