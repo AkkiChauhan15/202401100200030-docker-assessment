@@ -20,7 +20,10 @@ is stored in the named `postgres-data` volume.
 
 ## Run the stack
 
-1. Copy `.env.example` to `.env` and fill in all four values.
+The verified images and running stack are in Docker's `default` context. Select it first
+with `docker context use default`.
+
+1. The ignored `.env` is already personalized for local assessment use.
 2. For Stage 2, build and run locally:
 
    ```sh

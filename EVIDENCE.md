@@ -6,6 +6,7 @@ unedited, show the full window, show the REGNO prompt, and use the listed filena
 The verified local Trivy and cosign binaries are under the ignored `.tools/` folder:
 
 ```sh
+docker context use default
 export PATH="$PWD/.tools:$PATH"
 ```
 
